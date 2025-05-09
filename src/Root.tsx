@@ -3,21 +3,15 @@ import {
   Navigate,
   Route,
   Routes,
-  useParams,
 } from 'react-router-dom';
 import { PeopleProvider } from './providers/peopleProvider/peopleProvider';
 import { App } from './App';
 import { HomePage } from './pages/homePage/homePage';
 import { PeoplePage } from './pages/peoplePage/peoplePage';
 import { NotFoundPage } from './pages/notFoundPage/notFoundPage';
+import { RedirectToPerson } from './components/redirectToSlug/redirectToSlug';
 
 export const Root = () => {
-  const RedirectToPerson = () => {
-    const { slug } = useParams();
-
-    return <Navigate to={`/person/${slug}`} replace />;
-  };
-
   return (
     <Router>
       <PeopleProvider>
